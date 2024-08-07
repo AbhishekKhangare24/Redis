@@ -1,0 +1,625 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\abhis> wsl --install
+Ubuntu is already installed.
+Launching Ubuntu...
+Installing, this may take a few minutes...
+^@^@^@Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: abhishek
+^@^@^@New password:
+Retype new password:
+passwd: password updated successfully
+Installation successful!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.153.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+This message is shown once a day. To disable it please create the
+/home/abhishek/.hushlogin file.
+abhishek@DESKTOP-RUD8E25:~$ curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+[sudo] password for abhishek:
+abhishek@DESKTOP-RUD8E25:~$ echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb jammy main
+abhishek@DESKTOP-RUD8E25:~$ sudo apt-get update
+Get:1 http://security.ubuntu.com/ubuntu jammy-security InRelease [129 kB]
+Get:2 https://packages.redis.io/deb jammy InRelease [3821 B]
+Hit:3 http://archive.ubuntu.com/ubuntu jammy InRelease
+Get:4 https://packages.redis.io/deb jammy/main all Packages [4617 B]
+Get:5 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [128 kB]
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [1685 kB]
+Get:7 https://packages.redis.io/deb jammy/main amd64 Packages [21.9 kB]
+Get:8 http://archive.ubuntu.com/ubuntu jammy-backports InRelease [127 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy/universe amd64 Packages [14.1 MB]
+16% [9 Packages 690 kB/14.1 MB 5%] [6 Packages 630 kB/1685 kB 37%]                                   54.6 kB/s 9min 30s^Get:10 http://security.ubuntu.com/ubuntu jammy-security/main Translation-en [280 kB]
+21% [9 Packages 1856 kB/14.1 MB 13%] [10 Translation-en 41.9 kB/280 kB 15%]                          12.4 kB/s 39min 0s^Get:11 http://security.ubuntu.com/ubuntu jammy-security/main amd64 c-n-f Metadata [13.1 kB]
+Get:12 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 Packages [2184 kB]
+24% [9 Packages 1988 kB/14.1 MB 14%] [12 Packages 301 kB/2184 kB 14%]                               37.7 kB/s 12min 28s
+24% [9 Packages 2010 kB/14.1 MB 14%] [12 Packages 391 kB/2184 kB 18%]                                27.6 kB/s 17min 0s
+25% [9 Packages 2056 kB/14.1 MB 15%] [12 Packages 635 kB/2184 kB 29%]                               42.7 kB/s 10min 52s
+30% [9 Packages 3066 kB/14.1 MB 22%] [12 Packages 2022 kB/2184 kB 93%]                              12.2 kB/s 34min 46s
+30% [9 Packages 3084 kB/14.1 MB 22%] [12 Packages 2042 kB/2184 kB 94%]                              12.2 kB/s 34min 43s^Get:13 http://security.ubuntu.com/ubuntu jammy-security/restricted Translation-en [375 kB]
+32% [9 Packages 3252 kB/14.1 MB 23%] [13 Translation-en 123 kB/375 kB 33%]                          12.4 kB/s 33min 33s
+Get:14 http://security.ubuntu.com/ubuntu jammy-security/restricted amd64 c-n-f Metadata [572 B]
+Get:15 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 Packages [888 kB]
+35% [9 Packages 3574 kB/14.1 MB 25%] [15 Packages 381 kB/888 kB 43%]                                 12.9 kB/s 31min 5s
+36% [9 Packages 3900 kB/14.1 MB 28%] [15 Packages 729 kB/888 kB 82%]                                10.8 kB/s 35min 54s^Get:16 http://security.ubuntu.com/ubuntu jammy-security/universe Translation-en [174 kB]
+Get:17 http://security.ubuntu.com/ubuntu jammy-security/universe amd64 c-n-f Metadata [19.0 kB]
+Get:18 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [37.2 kB]
+Get:19 http://security.ubuntu.com/ubuntu jammy-security/multiverse Translation-en [7588 B]
+Get:20 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 c-n-f Metadata [228 B]
+Get:21 http://archive.ubuntu.com/ubuntu jammy/universe Translation-en [5652 kB]
+Get:22 http://archive.ubuntu.com/ubuntu jammy/universe amd64 c-n-f Metadata [286 kB]
+Get:23 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 Packages [217 kB]
+Get:24 http://archive.ubuntu.com/ubuntu jammy/multiverse Translation-en [112 kB]
+Get:25 http://archive.ubuntu.com/ubuntu jammy/multiverse amd64 c-n-f Metadata [8372 B]
+Get:26 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1902 kB]
+Get:27 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [339 kB]
+Get:28 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 c-n-f Metadata [17.7 kB]
+Get:29 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 Packages [2259 kB]
+Get:30 http://archive.ubuntu.com/ubuntu jammy-updates/restricted Translation-en [388 kB]
+Get:31 http://archive.ubuntu.com/ubuntu jammy-updates/restricted amd64 c-n-f Metadata [604 B]
+Get:32 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [1110 kB]
+Get:33 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [259 kB]
+Get:34 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 c-n-f Metadata [25.9 kB]
+Get:35 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [43.3 kB]
+Get:36 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse Translation-en [10.8 kB]
+Get:37 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 c-n-f Metadata [444 B]
+Get:38 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 Packages [67.1 kB]
+Get:39 http://archive.ubuntu.com/ubuntu jammy-backports/main Translation-en [11.0 kB]
+Get:40 http://archive.ubuntu.com/ubuntu jammy-backports/main amd64 c-n-f Metadata [388 B]
+Get:41 http://archive.ubuntu.com/ubuntu jammy-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:42 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 Packages [28.8 kB]
+Get:43 http://archive.ubuntu.com/ubuntu jammy-backports/universe Translation-en [16.5 kB]
+Get:44 http://archive.ubuntu.com/ubuntu jammy-backports/universe amd64 c-n-f Metadata [672 B]
+Get:45 http://archive.ubuntu.com/ubuntu jammy-backports/multiverse amd64 c-n-f Metadata [116 B]
+Fetched 32.9 MB in 56min 48s (9660 B/s)
+Reading package lists... Done
+abhishek@DESKTOP-RUD8E25:~$ sudo apt-get install redis
+[sudo] password for abhishek:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  redis-server redis-tools
+Suggested packages:
+  ruby-redis
+The following NEW packages will be installed:
+  redis redis-server redis-tools
+0 upgraded, 3 newly installed, 0 to remove and 112 not upgraded.
+Need to get 1690 kB of archives.
+After this operation, 9683 kB of additional disk space will be used.
+Do you want to continue? [Y/n]
+Get:1 https://packages.redis.io/deb jammy/main amd64 redis-tools amd64 6:7.4.0-1rl1~jammy1 [1582 kB]
+34% [1 redis-tools 727 kB/1582 kB 46%]                                                                8275 B/s 1min 56s^48% [1 redis-tools 1005 kB/1582 kB 64%]                                                                5317 B/s 2min 8s^69% [1 redis-tools 1467 kB/1582 kB 93%]                                                                    5447 B/s 40s^70% [1 redis-tools 1484 kB/1582 kB 94%]                                                                    5447 B/s 37ss72% [1 redis-tools 1517 kB/1582 kB 96%]                                                                    5448 B/s 31s Get:2 https://packages.redis.io/deb jammy/main amd64 redis-server amd64 6:7.4.0-1rl1~jammy1 [78.8 kB]
+Get:3 https://packages.redis.io/deb jammy/main amd64 redis all 6:7.4.0-1rl1~jammy1 [29.5 kB]
+Fetched 1690 kB in 4min 20s (6491 B/s)
+Selecting previously unselected package redis-tools.
+(Reading database ... 24208 files and directories currently installed.)
+Preparing to unpack .../redis-tools_6%3a7.4.0-1rl1~jammy1_amd64.deb ...
+Unpacking redis-tools (6:7.4.0-1rl1~jammy1) ...
+Selecting previously unselected package redis-server.
+Preparing to unpack .../redis-server_6%3a7.4.0-1rl1~jammy1_amd64.deb ...
+Unpacking redis-server (6:7.4.0-1rl1~jammy1) ...
+Selecting previously unselected package redis.
+Preparing to unpack .../redis_6%3a7.4.0-1rl1~jammy1_all.deb ...
+Unpacking redis (6:7.4.0-1rl1~jammy1) ...
+Setting up redis-tools (6:7.4.0-1rl1~jammy1) ...
+Setting up redis-server (6:7.4.0-1rl1~jammy1) ...
+Setting up redis (6:7.4.0-1rl1~jammy1) ...
+Processing triggers for man-db (2.10.2-1) ...
+abhishek@DESKTOP-RUD8E25:~$ sudo service redis-server start
+abhishek@DESKTOP-RUD8E25:~$ sudo service redis-server start
+abhishek@DESKTOP-RUD8E25:~$
+abhishek@DESKTOP-RUD8E25:~$
+abhishek@DESKTOP-RUD8E25:~$ sudo service redis-server start
+abhishek@DESKTOP-RUD8E25:~$ redis-cli
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> set name2 Lachi
+OK
+127.0.0.1:6379> get name
+(nil)
+127.0.0.1:6379> get name2
+"Lachi"
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> clear
+127.0.0.1:6379> redis-cli ping
+(error) ERR unknown command 'redis-cli', with args beginning with: 'ping'
+127.0.0.1:6379> redis-cli ping
+(error) ERR unknown command 'redis-cli', with args beginning with: 'ping'
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> cls
+127.0.0.1:6379> cls
+(error) ERR unknown command 'cls', with args beginning with:
+127.0.0.1:6379> clear
+127.0.0.1:6379> redis-sli ping
+(error) ERR unknown command 'redis-sli', with args beginning with: 'ping'
+127.0.0.1:6379> redis-cli ping
+(error) ERR unknown command 'redis-cli', with args beginning with: 'ping'
+127.0.0.1:6379> cls
+(error) ERR unknown command 'cls', with args beginning with:
+127.0.0.1:6379> ping
+PONG
+127.0.0.1:6379> cls
+(error) ERR unknown command 'cls', with args beginning with:
+127.0.0.1:6379>
+abhishek@DESKTOP-RUD8E25:~$ redis-cli -u redis://default:mtNERW6Lt3lHRLbrNLHjlrQ46DdMhG8r@redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936
+Warning: Using a password with '-a' or '-u' option on the command line interface may not be safe.
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SET sis lachi
+OK
+(1.00s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET wow
+(nil)
+(0.96s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET bro
+(error) ERR wrong number of arguments for 'get' command
+(0.90s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sis
+(error) ERR wrong number of arguments for 'get' command
+(0.54s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sis
+(error) ERR wrong number of arguments for 'get' command
+(1.46s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET
+(error) ERR wrong number of arguments for 'get' command
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sis
+"lachi"
+(1.26s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> cls
+(error) ERR unknown command 'cls'
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936>
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SET name lachi
+OK
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET name
+"lachi"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET bro
+(nil)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sis
+"lachi"
+(0.61s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sis
+"lachi"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> keys *
+1) "name"
+2) "sis"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> get name
+"lachi"
+(1.28s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> get sis
+"lachi"
+(1.22s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> mset key1 "val1" key2 "val2"
+OK
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET key1
+"val1"
+(0.61s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SETNX new1 champ
+(integer) 1
+(1.52s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET new1
+"champ"
+(0.62s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SET new1 "sda"
+OK
+(1.58s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET new1
+"sda"
+(0.58s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SETNX new1 "123"
+(integer) 0
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SETNX lol23 "sdas"
+(integer) 1
+(1.37s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> KEYS *
+1) "sis"
+2) "name"
+3) "new1"
+4) "key1"
+5) "lol23"
+6) "key2"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> new1 df
+(error) ERR unknown command 'new1'
+(1.80s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TYPE df
+none
+(1.09s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> MGET lol23 new1 df key2
+1) "sdas"
+2) "sda"
+3) (nil)
+4) "val2"
+(0.55s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TYPE df
+none
+(0.67s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TYPE new1
+string
+(1.67s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TYPE new2
+none
+(1.16s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> CLEAR
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> DEL df
+(integer) 0
+(1.56s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> KEYS *
+1) "sis"
+2) "name"
+3) "new1"
+4) "key1"
+5) "lol23"
+6) "key2"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> DEL df
+(integer) 0
+(1.31s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> DEL lol23 new1 key1
+(integer) 3
+(0.59s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> KEYS*
+(error) ERR unknown command 'KEYS*'
+(1.41s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> KEYS *
+1) "sis"
+2) "name"
+3) "key2"
+(1.37s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> EXISTS wow
+(integer) 0
+(1.46s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> EXISTS sis
+(integer) 1
+(1.50s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL wow
+(integer) -2
+(1.56s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sis
+(integer) -1
+(1.49s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> EXPIRE key2 10
+(integer) 1
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL key2
+(integer) 3
+(1.53s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL key2
+(integer) -2
+(1.44s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SETEX sample 30 "Secret"
+OK
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sample
+(integer) 3
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SETEX sample 40 "Secret"
+OK
+(1.45s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sample
+(integer) 34
+(1.65s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sample
+(integer) 29
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sample
+(integer) 26
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sample
+(integer) 22
+(1.02s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sample
+(integer) 3
+(0.54s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> TTL sample
+(integer) -2
+(1.22s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> get sample
+(nil)
+(0.93s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SET sample wow this is amaizing
+(error) ERR syntax error
+(1.23s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> clear
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sample
+(nil)
+(1.57s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE sample 0 5
+""
+(1.43s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SET sample "wow this is amaizing"
+OK
+(0.76s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sample
+"wow this is amaizing"
+(1.43s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SET sample "0 5"
+OK
+(1.40s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE sample "0 5"
+(error) ERR wrong number of arguments for 'getrange' command
+(0.85s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE sample 0 5
+"0 5"
+(1.41s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE sample 0 5
+"0 5"
+(1.06s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sample
+"0 5"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SET sample "wow this is amaizing"
+GET OK
+(1.58s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sample
+"wow this is amaizing"
+(1.67s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE "sample"
+(error) ERR wrong number of arguments for 'getrange' command
+(0.62s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE sample 0 5
+"wow th"
+(1.41s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE sample 0 7
+"wow this"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GETRANGE sample 4 6
+"thi"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SETRANGE sample 4 naah
+(integer) 20
+(0.86s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sample
+"wow naah is amaizing"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SETRANGE sample 4 subscribershi
+(integer) 20
+(1.42s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET sample
+"wow subscribershiing"
+(1.33s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> cls
+cl(error) ERR unknown command 'cls'
+(3.04s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> clear
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LPUSH mytarr "1"
+(integer) 1
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> mytarr "WOW"
+(error) ERR unknown command 'mytarr'
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LPUSH mytarr "WOW"
+(integer) 2
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> RPUSH
+(error) ERR wrong number of arguments for 'rpush' command
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> RPUSH mytarr "naah"
+(integer) 3
+(1.36s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> RPUSH mytarr "o" "s" "c"
+(integer) 6
+(1.41s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> GET mytarr
+(error) WRONGTYPE Operation against a key holding the wrong kind of value
+(1.32s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LGET mytarr
+(error) ERR unknown command 'LGET'
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LLENGTH mytarr
+(error) ERR unknown command 'LLENGTH'
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LLEN mytarr
+(integer) 6
+(1.55s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> keys*
+(error) ERR unknown command 'keys*'
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> keys *
+1) "sis"
+2) "name"
+3) "mytarr"
+4) "sample"
+(1.61s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 0 6
+1) "WOW"
+2) "1"
+3) "naah"
+4) "o"
+5) "s"
+6) "c"
+(0.64s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 0 -1
+1) "WOW"
+2) "1"
+3) "naah"
+4) "o"
+5) "s"
+6) "c"
+(1.34s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 0 5
+1) "WOW"
+2) "1"
+3) "naah"
+4) "o"
+5) "s"
+6) "c"
+(1.49s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 0 2
+1) "WOW"
+2) "1"
+3) "naah"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 3 -1
+1) "o"
+2) "s"
+3) "c"
+(0.77s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LPOP mytarr
+"WOW"
+(0.69s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 0 -1
+1) "1"
+2) "naah"
+3) "o"
+4) "s"
+5) "c"
+(1.40s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> RPOP mytarr
+"c"
+(1.37s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 0 -1
+1) "1"
+2) "naah"
+3) "o"
+4) "s"
+(0.52s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> BLPOP mytarr
+(error) ERR wrong number of arguments for 'blpop' command
+(0.57s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> BLOP mytarr 40
+(error) ERR unknown command 'BLOP'
+(1.67s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> BLPOP mytarr 40
+1) "mytarr"
+2) "1"
+(1.27s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE mytarr 0 -1
+1) "naah"
+2) "o"
+3) "s"
+(1.50s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> BLPOP mytarr 40
+1) "mytarr"
+2) "naah"
+(1.51s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> BLPOP mytarr 40
+1) "mytarr"
+2) "o"
+(0.60s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SADD yup 2
+(integer) 1
+(1.49s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SADD yup 3
+(integer) 1
+(0.55s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SADD yup 45
+(integer) 1
+(1.44s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SADD yup 34
+(integer) 1
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SREM yup 34
+(integer) 1
+(1.35s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SADD yup 45
+(integer) 0
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SISMEMBER yup sd
+(integer) 0
+(1.44s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SISMEMBER yup 2
+(integer) 1
+(0.60s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> LRANGE yup 0 -1
+(error) WRONGTYPE Operation against a key holding the wrong kind of value
+(1.55s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SADD gojo infinitevoid
+(integer) 1
+(1.51s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SINTER gojo yup
+(empty array)
+(0.57s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SADD gojo 2
+(integer) 1
+(0.62s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> SINTER gojo yup
+1) "2"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZADD lol 1
+(error) ERR wrong number of arguments for 'zadd' command
+(1.43s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZADD lol 1 value2
+(integer) 1
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZADD lol 1 sampledata
+(integer) 1
+(1.28s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZADD lol 10 sampledata
+(integer) 0
+(1.24s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZADD lol 10 sampledata2
+(integer) 1
+(0.57s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZRANGE lol 0 -1
+1) "value2"
+2) "sampledata"
+3) "sampledata2"
+(1.04s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZRANGE lol value2
+(error) ERR wrong number of arguments for 'zrange' command
+(1.38s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZRANK lol vlaue2
+(nil)
+(0.77s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZRANK lol sampledata
+(integer) 1
+(0.72s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZRANK lol sampledata
+(integer) 1
+(1.12s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZRANK lol sampledata2
+(integer) 2
+(1.47s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZREVRANK lol value2
+(integer) 2
+(1.38s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZREVRANK lol sampledata
+(integer) 1
+(1.54s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> ZREVRANK lol sampledata2
+(integer) 0
+(0.56s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HSET bikes model Deimos brand Ergonom type 'Enduro bikes' price 4972
+(integer) 4
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HSET girls sophie "rejected"
+(integer) 1
+(1.39s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> cls
+(error) ERR unknown command 'cls'
+(1.41s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HGET girls sophie
+"rejected"
+(1.51s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HGET bikes type
+"Enduro bikes"
+(1.30s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HMGET bikes type price
+1) "Enduro bikes"
+2) "4972"
+(1.19s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HINCRBY bikes price
+(error) ERR wrong number of arguments for 'hincrby' command
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HINCRBY bikes price 5000
+(integer) 9972
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HINCRBY bikes model
+(error) ERR wrong number of arguments for 'hincrby' command
+(1.40s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HINCRBY bikes model 20
+(error) ERR hash value is not an integer
+(1.02s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HKEYS bikes
+1) "model"
+2) "brand"
+3) "type"
+4) "price"
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HVALS bikes
+1) "Deimos"
+2) "Ergonom"
+3) "Enduro bikes"
+4) "9972"
+(1.37s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HGETALL bikes
+1) "model"
+2) "Deimos"
+3) "brand"
+4) "Ergonom"
+5) "type"
+6) "Enduro bikes"
+7) "price"
+8) "9972"
+(1.38s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HDEL bikes price
+(integer) 1
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936> HDEL bikes pricesd
+(integer) 0
+(0.63s)
+redis-11936.c301.ap-south-1-1.ec2.redns.redis-cloud.com:11936>
